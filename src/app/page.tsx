@@ -98,21 +98,21 @@ export default function Home() {
 
       {/* Best Sellers / Latest Curation */}
       <ScrollReveal direction="up">
-        <section className="container mx-auto px-6 py-24">
-          <div className="text-center mb-20">
-            <span className="text-[10px] font-medium text-neutral-400 uppercase tracking-[0.3em] mb-6 block">Trending buddy</span>
-            <h2 className="text-4xl md:text-5xl font-medium text-neutral-900 tracking-tight font-serif">
+        <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
+          <div className="text-center mb-16 sm:mb-20">
+            <span className="text-[10px] font-medium text-neutral-400 uppercase tracking-[0.3em] mb-4 sm:mb-6 block">Trending buddy</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-neutral-900 tracking-tight font-serif">
               Our <span className="text-neutral-400 italic">Collection buddy.</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 sm:gap-8">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
 
-          <div className="mt-20 text-center">
+          <div className="mt-16 sm:mt-20 text-center">
             <Button asChild variant="outline" className="h-14 px-10 rounded-lg text-xs font-medium uppercase tracking-widest border-neutral-200 hover:border-neutral-900 hover:bg-white transition-all">
               <Link href="/products">See All Items buddy</Link>
             </Button>
@@ -123,6 +123,14 @@ export default function Home() {
       <RecentlyViewed />
 
       <ScrollReveal direction="up">
+        <LiveShoppingEvents />
+      </ScrollReveal>
+
+      <ScrollReveal direction="up">
+        <UserGeneratedContent />
+      </ScrollReveal>
+
+      <ScrollReveal direction="up" className="mt-24">
         <Newsletter />
       </ScrollReveal>
     </main>
