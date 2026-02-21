@@ -22,16 +22,16 @@ export default function Newsletter() {
     }
 
     return (
-        <section className="py-24 bg-neutral-900 text-white rounded-[2rem] mx-6 mb-24 overflow-hidden relative">
+        <section className="py-16 sm:py-24 bg-neutral-900 text-white rounded-[1.5rem] sm:rounded-[2rem] mx-4 sm:mx-6 mb-16 sm:mb-24 overflow-hidden relative">
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]"></div>
             </div>
 
-            <div className="container mx-auto px-12 relative z-10">
+            <div className="container mx-auto px-6 sm:px-12 relative z-10">
                 <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
                     <div className="text-center md:text-left flex-1">
                         <span className="text-[10px] font-medium uppercase tracking-[0.4em] mb-6 block text-neutral-400">Chennai Updates</span>
-                        <h2 className="text-4xl md:text-5xl font-medium tracking-tight font-serif italic mb-8">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight font-serif italic mb-6 sm:mb-8">
                             Get 15% Off Your <br />
                             <span className="text-neutral-500">First Order buddy!</span>
                         </h2>
@@ -40,7 +40,7 @@ export default function Newsletter() {
                         </p>
                     </div>
 
-                    <div className="w-full max-w-md bg-white/5 backdrop-blur-md p-10 rounded-2xl border border-white/10">
+                    <div className="w-full max-w-md bg-white/5 backdrop-blur-md p-6 sm:p-10 rounded-2xl border border-white/10">
                         <form onSubmit={handleSubscribe} className="space-y-6">
                             <div className="relative">
                                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500" size={18} />

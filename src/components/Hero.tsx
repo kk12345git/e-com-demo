@@ -21,7 +21,7 @@ export default function Hero() {
     }, [heroProducts.length])
 
     return (
-        <section ref={containerRef} className="relative min-h-[85vh] flex flex-col items-center justify-center pt-32 pb-24 px-6 overflow-hidden bg-[#FDFCFB]">
+        <section ref={containerRef} className="relative min-h-[80vh] sm:min-h-[85vh] flex flex-col items-center justify-center pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 overflow-hidden bg-[#FDFCFB]">
             <div className="container mx-auto relative z-10">
                 <div className="grid lg:grid-cols-12 gap-16 items-center">
                     {/* Content Column */}
@@ -34,7 +34,7 @@ export default function Hero() {
                             <span className="text-[10px] font-medium uppercase tracking-widest text-neutral-500">Summer Vibe 2025 buddy</span>
                         </motion.div>
 
-                        <h1 className="text-6xl md:text-8xl font-medium text-neutral-900 tracking-tight leading-[1.1] mb-8 font-serif">
+                        <h1 className="text-5xl sm:text-6xl md:text-8xl font-medium text-neutral-900 tracking-tight leading-[1.1] mb-6 sm:mb-8 font-serif">
                             Mass <br />
                             <span className="text-neutral-400 italic">Essence.</span>
                         </h1>

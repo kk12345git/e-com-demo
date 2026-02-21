@@ -52,7 +52,7 @@ export default function PromotionalCarousel() {
     const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + banners.length) % banners.length)
 
     return (
-        <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden rounded-2xl bg-neutral-100 group">
+        <div className="relative w-full h-[250px] sm:h-[350px] md:h-[500px] overflow-hidden rounded-2xl bg-neutral-100 group">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentSlide}
@@ -69,20 +69,15 @@ export default function PromotionalCarousel() {
                             fill
                             className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-[2s] pointer-events-none"
                         />
-                        <div className={`absolute inset-0 flex flex-col items-center justify-center text-center px-12 ${banners[currentSlide].id === 2 ? 'text-neutral-900' : 'text-white'}`}>
-                            <motion.span
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.2 }}
-                                className="text-[10px] md:text-xs font-medium uppercase tracking-[0.4em] mb-6"
-                            >
+                        <div className={`absolute inset-0 flex flex-col items-center justify-center text-center px-6 sm:px-12 ${banners[currentSlide].id === 2 ? 'text-neutral-900' : 'text-white'}`}>
+                            <span className="text-[9px] sm:text-[10px] md:text-xs font-medium uppercase tracking-[0.4em] mb-4 sm:mb-6">
                                 Limited Series
-                            </motion.span>
+                            </span>
                             <motion.h2
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="text-5xl md:text-8xl font-medium tracking-tight font-serif mb-10 leading-none"
+                                className="text-3xl sm:text-5xl md:text-8xl font-medium tracking-tight font-serif mb-6 sm:mb-10 leading-none"
                             >
                                 {banners[currentSlide].title}
                             </motion.h2>
@@ -90,7 +85,7 @@ export default function PromotionalCarousel() {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6 }}
-                                className="text-sm md:text-lg font-medium mb-12 max-w-lg mx-auto opacity-80"
+                                className="text-[11px] sm:text-sm md:text-lg font-medium mb-8 sm:mb-12 max-w-lg mx-auto opacity-80"
                             >
                                 {banners[currentSlide].subtitle}
                             </motion.p>
@@ -112,24 +107,24 @@ export default function PromotionalCarousel() {
             {/* Navigation Buttons */}
             <button
                 onClick={prevSlide}
-                className="absolute left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 hover:bg-white/20 transition-all z-10"
+                className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 hover:bg-white/20 transition-all z-10"
             >
-                <ChevronLeft size={20} />
+                <ChevronLeft size={16} className="sm:size-5" />
             </button>
             <button
                 onClick={nextSlide}
-                className="absolute right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 hover:bg-white/20 transition-all z-10"
+                className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 hover:bg-white/20 transition-all z-10"
             >
-                <ChevronRight size={20} />
+                <ChevronRight size={16} className="sm:size-5" />
             </button>
 
             {/* Indicators */}
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-4 z-10">
+            <div className="absolute bottom-6 sm:bottom-12 left-1/2 -translate-x-1/2 flex gap-3 sm:gap-4 z-10">
                 {banners.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => setCurrentSlide(index)}
-                        className={`h-1 rounded-full transition-all duration-500 ${index === currentSlide ? "bg-white w-12" : "bg-white/30 w-4"
+                        className={`h-0.5 sm:h-1 rounded-full transition-all duration-500 ${index === currentSlide ? "bg-white w-8 sm:w-12" : "bg-white/30 w-3 sm:w-4"
                             }`}
                     />
                 ))}
