@@ -43,8 +43,14 @@ export default function Navbar() {
                     <div className="flex items-center justify-between gap-4 md:gap-12 h-16 md:h-20">
                         {/* Logo */}
                         <div className="flex items-center">
-                            <Link href="/" className="text-xl font-bold text-neutral-900 tracking-tight shrink-0 flex items-center gap-2 font-inter">
-                                Shop<span className="text-neutral-500">Clone.</span>
+                            <Link href="/" className="relative w-32 h-10 sm:w-40 sm:h-12 flex items-center shrink-0">
+                                <Image
+                                    src="/logo.png"
+                                    alt="Deeshora"
+                                    fill
+                                    className="object-contain object-left"
+                                    priority
+                                />
                             </Link>
                         </div>
 

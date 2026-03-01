@@ -7,10 +7,11 @@ import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
 import { Toaster } from "@/components/ui/toaster";
 import BackToTop from "@/components/BackToTop";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export const metadata: Metadata = {
-  title: "ShopClone | Chennai-oda Semma Marketplace",
-  description: "Namba Chennai-oda exclusive premium marketplace. Best products, best vibes buddy!",
+  title: "Deeshora | From India To The World",
+  description: "Deeshora is your premium marketplace for authentic Indian products, bringing the best to the world.",
 };
 
 export default function RootLayout({
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className="antialiased font-sans">
         <AuthProvider>
           <CartProvider>
+            <LoadingScreen />
             <Navbar />
             {children}
             <Concierge />

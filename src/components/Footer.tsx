@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Footer() {
     return (
@@ -8,9 +9,16 @@ export default function Footer() {
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-20 mb-24">
                     <div className="col-span-1 md:col-span-2">
-                        <div className="text-2xl font-medium tracking-tight font-serif italic mb-8">ShopClone.</div>
-                        <p className="text-neutral-400 text-sm font-medium uppercase tracking-widest leading-loose max-w-sm">
-                            Namba Chennai-oda exclusive premium marketplace. Best products, best vibes buddy!
+                        <div className="relative w-48 h-16 xl:w-56 xl:h-20 mb-6">
+                            <Image
+                                src="/logo.png"
+                                alt="Deeshora"
+                                fill
+                                className="object-contain object-left"
+                            />
+                        </div>
+                        <p className="text-neutral-500 text-sm font-medium leading-relaxed max-w-sm">
+                            From India To The World. Authentic premium marketplace.
                         </p>
                     </div>
 
@@ -39,7 +47,7 @@ export default function Footer() {
                 <div className="pt-12 border-t border-neutral-50 flex flex-col md:flex-row items-center justify-between text-[9px] text-neutral-300 font-medium tracking-[0.4em] uppercase gap-8">
                     <div className="flex items-center gap-4">
                         <div className="w-1.5 h-1.5 bg-neutral-100 rounded-full"></div>
-                        <span>© 2026 ShopClone Collective.</span>
+                        <span>© 2026 Deeshora.</span>
                     </div>
                     <div className="flex gap-12">
                         <span>Authenticity Guaranteed</span>
