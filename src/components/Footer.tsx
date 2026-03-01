@@ -2,8 +2,11 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { useLanguage } from "@/context/LanguageContext"
 
 export default function Footer() {
+    const { t } = useLanguage()
+
     return (
         <footer className="bg-[#FDFCFB] border-t border-neutral-100 py-24 text-neutral-900">
             <div className="container mx-auto px-6">
@@ -18,22 +21,22 @@ export default function Footer() {
                             />
                         </div>
                         <p className="text-neutral-500 text-sm font-medium leading-relaxed max-w-sm">
-                            From India To The World. Authentic premium marketplace.
+                            {t("footer.desc")}
                         </p>
                     </div>
 
                     <div>
-                        <h4 className="text-[10px] font-medium uppercase tracking-[0.4em] text-neutral-900 mb-8">Namba Pages</h4>
+                        <h4 className="text-[10px] font-medium uppercase tracking-[0.4em] text-neutral-900 mb-8">{t("footer.linksTag")}</h4>
                         <ul className="text-neutral-400 text-[10px] font-medium uppercase tracking-[0.3em] flex flex-col gap-6">
                             <li><Link href="/" className="hover:text-neutral-900 transition-colors">Home</Link></li>
-                            <li><Link href="/products" className="hover:text-neutral-900 transition-colors">Collection</Link></li>
+                            <li><Link href="/products" className="hover:text-neutral-900 transition-colors">{t("nav.collections")}</Link></li>
                             <li><Link href="/cart" className="hover:text-neutral-900 transition-colors">Bag</Link></li>
-                            <li><Link href="/wishlist" className="hover:text-neutral-900 transition-colors">Wishlist</Link></li>
+                            <li><Link href="/wishlist" className="hover:text-neutral-900 transition-colors">{t("nav.wishlist")}</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-[10px] font-medium uppercase tracking-[0.4em] text-neutral-900 mb-8">Uthavi Buddy</h4>
+                        <h4 className="text-[10px] font-medium uppercase tracking-[0.4em] text-neutral-900 mb-8">{t("footer.supportTag")}</h4>
                         <ul className="text-neutral-400 text-[10px] font-medium uppercase tracking-[0.3em] flex flex-col gap-6">
                             <li><Link href="/support" className="hover:text-neutral-900 transition-colors">Help Center</Link></li>
                             <li><Link href="/support" className="hover:text-neutral-900 transition-colors">Shipment Tracking</Link></li>

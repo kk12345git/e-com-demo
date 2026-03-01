@@ -7,8 +7,10 @@ import { useRef, useState, useEffect, useMemo } from "react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { products } from "@/data/products"
+import { useLanguage } from "@/context/LanguageContext"
 
 export default function Hero() {
+    const { t } = useLanguage()
     const containerRef = useRef(null)
     const [activeSlide, setActiveSlide] = useState(0)
     const heroProducts = useMemo(() => products.slice(0, 4), [])
@@ -21,7 +23,7 @@ export default function Hero() {
     }, [heroProducts.length])
 
     return (
-        <section ref={containerRef} className="relative min-h-[80vh] sm:min-h-[85vh] flex flex-col items-center justify-center pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 overflow-hidden bg-[#FDFCFB]">
+        <section ref={containerRef} className="relative min-h-[80vh] sm:min-h-[85vh] flex flex-col items-center justify-center pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-[#FDFCFB] to-[#f8f6f4]">
             <div className="container mx-auto relative z-10">
                 <div className="grid lg:grid-cols-12 gap-16 items-center">
                     {/* Content Column */}
@@ -31,26 +33,26 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             className="bg-neutral-100 px-4 py-1.5 rounded-full w-fit mb-8"
                         >
-                            <span className="text-[10px] font-medium uppercase tracking-widest text-neutral-500">Summer Vibe 2025 buddy</span>
+                            <span className="text-[10px] font-medium uppercase tracking-widest text-neutral-500">{t("hero.badge")}</span>
                         </motion.div>
 
-                        <h1 className="text-5xl sm:text-6xl md:text-8xl font-medium text-neutral-900 tracking-tight leading-[1.1] mb-6 sm:mb-8 font-serif">
-                            Mass <br />
-                            <span className="text-neutral-400 italic">Essence.</span>
+                        <h1 className="text-5xl sm:text-6xl md:text-8xl font-medium text-deeshora-navy tracking-tight leading-[1.1] mb-6 sm:mb-8 font-serif drop-shadow-sm">
+                            {t("hero.title1")} <br />
+                            <span className="text-deeshora-orange italic drop-shadow-sm">{t("hero.title2")}</span>
                         </h1>
 
                         <p className="max-w-md text-sm text-neutral-500 font-medium leading-relaxed mb-12">
-                            Super curated stuff for your life buddy. Get the best quality items delivered right to your home in Chennai.
+                            {t("hero.subtitle")}
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                            <Button asChild className="h-14 px-10 rounded-lg bg-neutral-900 text-white hover:bg-neutral-800 transition-all font-medium">
+                            <Button asChild className="h-14 px-10 rounded-lg bg-deeshora-orange text-white hover:bg-[#e06c1a] hover:shadow-lg transition-all font-bold">
                                 <Link href="/products" className="flex items-center justify-center gap-3">
-                                    Buy Now buddy <ArrowRight size={18} />
+                                    {t("hero.cta")} <ArrowRight size={18} />
                                 </Link>
                             </Button>
 
-                            <Link href="/products" className="text-sm font-medium text-neutral-900 border-b border-neutral-900 pb-1 hover:text-neutral-500 hover:border-neutral-500 transition-all">
+                            <Link href="/products" className="text-sm font-bold text-deeshora-navy border-b-[2px] border-deeshora-navy pb-1 hover:text-deeshora-orange hover:border-deeshora-orange transition-all">
                                 Check Styles
                             </Link>
                         </div>

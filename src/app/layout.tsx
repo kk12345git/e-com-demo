@@ -8,6 +8,7 @@ import { CartProvider } from "@/context/CartContext";
 import { Toaster } from "@/components/ui/toaster";
 import BackToTop from "@/components/BackToTop";
 import LoadingScreen from "@/components/LoadingScreen";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
   title: "Deeshora | From India To The World",
@@ -28,17 +29,19 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
       <body className="antialiased font-sans">
-        <AuthProvider>
-          <CartProvider>
-            <LoadingScreen />
-            <Navbar />
-            {children}
-            <Concierge />
-            <Footer />
-            <Toaster />
-            <BackToTop />
-          </CartProvider>
-        </AuthProvider>
+        <LanguageProvider>
+          <AuthProvider>
+            <CartProvider>
+              <LoadingScreen />
+              <Navbar />
+              {children}
+              <Concierge />
+              <Footer />
+              <Toaster />
+              <BackToTop />
+            </CartProvider>
+          </AuthProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
