@@ -9,9 +9,10 @@ interface ScrollRevealProps {
     width?: "fit-content" | "100%"
     direction?: "up" | "down" | "left" | "right"
     delay?: number
+    className?: string
 }
 
-export default function ScrollReveal({ children, width = "fit-content", direction = "up", delay = 0.2 }: ScrollRevealProps) {
+export default function ScrollReveal({ children, width = "fit-content", direction = "up", delay = 0.2, className = "" }: ScrollRevealProps) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -31,7 +32,7 @@ export default function ScrollReveal({ children, width = "fit-content", directio
     }
 
     return (
-        <div ref={ref} style={{ position: "relative", width, overflow: "visible" }}>
+        <div ref={ref} className={className} style={{ position: "relative", width, overflow: "visible" }}>
             <motion.div
                 variants={variants}
                 initial="hidden"
